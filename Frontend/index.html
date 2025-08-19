@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🍳 Recipe Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/style.css?v=7" />
+  <script defer src="/script.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <div class="title">
+        <span class="logo">🥘</span>
+        <h1>Recipe Management System</h1>
+      </div>
+    </header>
+
+    <section class="layout">
+      <div class="stack">
+        <section class="card">
+          <h2>Add / Edit Recipe</h2>
+          <div id="form">
+            <input id="title" placeholder="Recipe Title" />
+            <input id="ingredients" placeholder="Ingredients (comma separated)" />
+            <textarea id="instructions" placeholder="Instructions"></textarea>
+
+            <div class="row">
+              <button type="button" onclick="addRecipe()">Add Recipe</button>
+              <button type="button" id="aiBtn">AI Suggest</button>
+              <span id="aiOut" class="muted"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>📅 Meal Planner</h2>
+          <label class="inline">
+            Day
+            <select id="day">
+              <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+              <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+            </select>
+          </label>
+          <p class="muted">Select a day before saving to assign the recipe.</p>
+        </section>
+      </div>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Recipes</h2>
+          <span id="count" class="badge muted"></span>
+        </div>
+        <div id="recipes" class="recipes"></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
